@@ -19,4 +19,10 @@ public class HomeController {
 		ModelAndView modelAndView = new ModelAndView("menu");
 		return modelAndView;
 	}
+	
+	@GetMapping("/login")
+	public ModelAndView login() {
+		ModelAndView modelAndView = new ModelAndView("paginaLogin");
+		return modelAndView;
+	}
 }
