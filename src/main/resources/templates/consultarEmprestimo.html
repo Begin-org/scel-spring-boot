@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"></meta>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+<title>SCEL</title>
+<link rel="stylesheet"
+	href="/webjars/bootstrap/4.4.1/css/bootstrap.min.css" />
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous" />
+<script src="https://kit.fontawesome.com/07afd95a3d.js"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/css/estilo-menu.css}" />
+<link rel="stylesheet" type="text/css"
+	th:href="@{/css/estilo-emprestimo.css}" />
+<body>
+	<div class="wrapper">
+
+		<!-- menu lateral -->
+		<nav th:replace="fragments/menu-fragment :: menu">
+			<div>menu</div>
+
+		</nav>
+
+		<!-- Page Content -->
+		<div id="content">
+
+			<!-- menu superior -->
+			<nav th:replace="fragments/menu-superior :: menuSuperior">
+				<div>menu</div>
+
+			</nav>
+
+			<h3>Consultar emprestimos</h3>
+			<div class="div-consulta-livro" th:switch="${emprestimos}">
+				<div class="topo-div">
+					<h4 class="titulo-consulta-livro">Empréstimos</h4>
+					<div class="botao-adicionar">
+						<a class="botao-ad" th:href="@{/emprestimos/cadastrar/}">+</a>
+					</div>
+				</div>
+				<h2 th:if="${emprestimos==null || #lists.size(emprestimos) == 0}" style="margin-left:1vw;">Não existem empréstimos cadastrados ainda!</h2>
+				<div style="width: 58vw;" th:if="${emprestimos!=null && #lists.size(emprestimos) > 0}">
+					<table class="table table-sm">
+						<thead class="head-tabela">
+							<tr>
+								<th scope="col" style="font-weight: 100; padding-left: 0.5vw;">ISBN</th>
+								<th scope="col" style="font-weight: 100;">RA</th>
+								<th scope="col" style="font-weight: 100;">DATA EMPRÉSTIMO</th>
+								<th scope="col" style="font-weight: 100;">DATA DE DEVOLUÇÃO PREVISTA</th>
+								<th scope="col" style="font-weight: 100;">DATA DE DEVOLUÇÃO</th>								
+								<th scope="col"></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr th:each="emprestimo: ${emprestimos}">
+								<th scope="row" class="th-personalizado" th:text="${emprestimo.isbn}"></th>
+								<td th:text="${emprestimo.ra}"></td>
+								<td th:text="${emprestimo.dataEmprestimo}"></td>
+								<td th:text="${emprestimo.dataDevolucaoPrevista}"></td>
+								<td th:text="${emprestimo.dataDevolucao}"></td>
+								<td><a th:href="@{/emprestimos/delete/{id}(id=${emprestimo.id})}"><img
+										th:src="@{/images/trash.png}" class="imgs-tabela"></a></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!--fecha content-->
+	</div>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"></script>
+	<script
+		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"></script>
+	<script
+		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"></script>
+	<script src="/js/menu.js"></script>
+</body>
+</body>
+</html>
