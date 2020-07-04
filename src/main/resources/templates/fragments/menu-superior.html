@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="utf-8"></meta>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+<title>SCEL</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+	crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/07afd95a3d.js"></script>
+<link rel="stylesheet" type="text/css" th:href="@{/css/estilo-menu.css}" />
+</head>
+<body>
+
+	<nav class="navbar navbar-expand-lg navbar-light bg-light" th:fragment="menuSuperior">
+		<div class="container-fluid">
+
+			<button type="button" id="sidebarCollapse" class="navbar-btn">
+				<span></span> <span></span> <span></span>
+			</button>
+			<button class="btn btn-dark d-inline-block d-lg-none ml-auto"
+				type="button" data-toggle="collapse"
+				data-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<i class="fas fa-align-justify"></i>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="nav navbar-nav ml-auto">
+					<li class="nav-item"><a class="nav-link textos-nav" href="/login?logout"><i
+							class="fas fa-sign-out-alt icons-navbar"></i>Sair</a></li>
+					<li class="nav-item ab"><a class="nav-link textos-nav"
+						href="#"><i class="fas fa-user-alt icons-navbar"></i>Perfil</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+</body>
+</html>

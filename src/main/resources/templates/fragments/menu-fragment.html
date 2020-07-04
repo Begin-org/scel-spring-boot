@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"></meta>
+	<title>SCEL</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/07afd95a3d.js"></script>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/estilo-menu.css}" />
+</head>
+<body>
+	<!-- menu lateral -->
+	<nav id="sidebar" th:fragment="menu">
+		<div class="sidebar-header">
+			<a th:href="@{/}">
+				<img th:src="@{/images/logo.ico}" class="logo-menu" />
+			</a>
+		</div>
+
+		<ul class="list-unstyled components">
+			<a th:href="@{/usuarios/cadastrar}">
+				<li class="lista-icone" style="margin-top: 15px;">
+					<img th:src="@{/images/usuarios.png}" class="icones-menu" />
+					<p class="texto-icones">Usuários</p>
+				</li>
+			</a>
+			<a th:href="@{/livros/cadastrar}">
+				<li class="lista-icone">
+					<img th:src="@{/images/livros.png}" class="icones-menu" />
+					<p class="texto-icones" style="margin-left: 10px; margin-top: -12px;">Livros</p>
+				</li>
+			</a>
+
+			<a th:href="@{/emprestimos/cadastrar}">
+				<li class="lista-icone">
+					<img th:src="@{/images/emprestimos.png}" class="icones-menu" />
+					<p class="texto-icones" style="margin-left: -4px;">Empréstimos</p>
+				</li>
+			</a>
+
+<!-- 
+			<li class="lista-icone"><img th:src="@{/images/devolucoes.png}" class="icones-menu" />
+				<p class="texto-icones" style="margin-left: -2px;">Devoluções</p>
+			</li>
+ -->
+			<li class="lista-icone"><img th:src="@{/images/relatorios.png}" class="icones-menu" />
+				<p class="texto-icones" style="margin-left: 0px;">Relatórios</p>
+			</li>
+		</ul>
+
+	</nav>
+</body>
+</html>
