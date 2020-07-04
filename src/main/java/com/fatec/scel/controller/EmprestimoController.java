@@ -59,7 +59,7 @@ public class EmprestimoController {
 	@GetMapping("/delete/{id}")
 	public ModelAndView delete(@PathVariable("id") Long id) {
 		servico.deleteById(id);
-		ModelAndView modelAndView = new ModelAndView("ConsultarEmprestimo");
+		ModelAndView modelAndView = new ModelAndView("consultarEmprestimo");
 		modelAndView.addObject("emprestimos", servico.findAll());
 		return modelAndView;
 	}
