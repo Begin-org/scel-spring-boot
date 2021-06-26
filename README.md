@@ -13,6 +13,13 @@
 ### Objetivo 
 Este projeto tem como objetivo implementar uma aplicação de empréstimo e devolução de livros, para se familiarizar com a plataforma de desenvolvimento web JEE Spring Boot. 
 
+### Design
+
+![design1](https://user-images.githubusercontent.com/45825131/123523863-15ddd080-d69d-11eb-93fc-e7372eadd7b6.jpg)
+![design2](https://user-images.githubusercontent.com/45825131/123523864-16766700-d69d-11eb-803c-fe40fd4b825e.jpg)
+![design3](https://user-images.githubusercontent.com/45825131/123523865-170efd80-d69d-11eb-9140-d35b8d674686.jpg)
+![design4](https://user-images.githubusercontent.com/45825131/123523866-170efd80-d69d-11eb-855c-f5e397e441e0.jpg)
+
 ### Processo de Desenvolvimento O processo de desenvolvimento segue uma adaptação do Scrum. 
 Cada interação tem a duração de 4 aulas. Ao final da interação o código é avaliado pelo time 
 junto com o professor na atividade de revisão da sprint. Em seguida a reunião de restrospectiva 
